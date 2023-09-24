@@ -1,0 +1,19 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC","dependencies": {
+    "@uirouter/angularjs": "^1.1.0",
+    "admin-lte": "^3.2.0",
+    "angular": "^1.8.3",
+    "angular-datatables": "^16.0.0",
+    "angular-local-storage": "^0.7.1",
+    "angular-route": "^1.8.3",
+    "animate.css": "^4.1.1"
+  }
+}
