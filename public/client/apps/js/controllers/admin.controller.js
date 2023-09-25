@@ -90,7 +90,7 @@ function AdminPenjualanController($scope, $http, $state, helperServices, SweetAl
   $scope.changeDate = (date) => {
     $http({
       method: "get",
-      url: helperServices.url + `/api/penjualan/date?month=${date.getMonth()}&year=${date.getFullYear()}`,
+      url: helperServices.url + `/api/penjualan/date/${date.getMonth()+1}/${date.getFullYear()}`,
       headers: AuthService.getHeader(),
       data: date
     }).then(
@@ -174,9 +174,11 @@ function AdminPenjualanBaruController($scope, $state, $stateParams, $http, AuthS
 
   $scope.save = function () {
 
+
+
     var req = {
       method: $scope.model.id ? "put" : "post",
-      url: helperServices.url + "/api/penjualan",
+      url: helperServices.url + "/api/penjualan" + ($scope.model.id ? "/"+$scope.model.id : ""),
       data: $scope.model,
       headers: AuthService.getHeader()
     };
@@ -231,7 +233,7 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
       var id = $stateParams.id;
       $http({
         method: "get",
-        url: helperServices.url + "/api/tracking/bypenjualan/" + id,
+        url: helperServices.url + "/api/penjualan/tracking/" + id,
         headers: AuthService.getHeader()
       }).then(
         function successCallback(response) {
@@ -271,7 +273,7 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
       function successCallback(response) {
         if (!$scope.tracking.id) {
           $scope.tracking.id = response.data.id;
-          $scope.model.tracking.push($scope.tracking);  
+          $scope.model.trackings.push($scope.tracking);  
         }
 
 
@@ -323,8 +325,8 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
           }).then(
             function successCallback(response) {
 
-              var index = $scope.model.tracking.indexOf(data);
-              $scope.model.tracking.splice(index, 1);
+              var index = $scope.model.trackings.indexOf(data);
+              $scope.model.trackings.splice(index, 1);
               SweetAlert.swal({
                 title: 'succes',
                 text: response.data.message,

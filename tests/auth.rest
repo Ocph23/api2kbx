@@ -1,9 +1,9 @@
-POST http://127.0.0.1:8000/api/register HTTP/1.1
+POST https://api2.keybexpress.com/api/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "name":"ocph23@gmail.com",
-    "email":"ocph23@gmail.com",
+    "name":"admin",
+    "email":"admin@gmail.com",
     "password":"Sony@77"
 }
 
@@ -20,5 +20,11 @@ Content-Type: application/json
 
 
 ####
-Get http://127.0.0.1:8000/api/regional HTTP/1.1
+Get http://127.0.0.1:8000/api/penjualan/stt/100001 HTTP/1.1
+Content-Type: application/json
+
+
+
+####
+Get http://127.0.0.1:8000/api/penjualan/date/9/2022 HTTP/1.1
 Content-Type: application/json
