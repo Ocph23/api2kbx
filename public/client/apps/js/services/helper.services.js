@@ -5,7 +5,7 @@ angular.module("helper.service", [])
 function helperServices() {
     var service = {};
     service.url = location.origin;
-    calculateTotal = (model) => {
+   service.calculateTotal = (model) => {
         var volume=0;
         if (model.isvolume) {
             volume = model.dimensi_panjang * model.dimensi_lebar * model.dimensi_panjang
@@ -20,5 +20,5 @@ function helperServices() {
 
    
 
-    return { url: service.url, calculateTotal:calculateTotal};
+    return { url: service.url, calculateTotal:service.calculateTotal};
 }

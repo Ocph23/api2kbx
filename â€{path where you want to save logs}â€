@@ -1,3 +1,0 @@
-[11860] Log opened at 2023-09-24 07:56:50.813209
-[11860] [Step Debug] INFO: Connecting to configured address/port: localhost:9001.
-[11860] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9001 (through xdebug.client_host/xdebug.client_port).

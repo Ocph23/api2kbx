@@ -473,7 +473,7 @@ function AdminRegionalController($scope, $state, $stateParams, $http, AuthServic
   }
 }
 
-function AdminKanwilController($scope, $state, $stateParams, $http, AuthService, helperServices, SweetAlert, SweetAlert) {
+function AdminKanwilController($scope, $state, $stateParams, $http, AuthService, helperServices, SweetAlert) {
   this.$onInit = function () {
     if ($stateParams.id) {
       var id = $stateParams.id;
