@@ -9,5 +9,5 @@ class Tracking extends Model
 {
     use HasFactory;
     public $timestamps=false;
-    protected $fillable = ['penjualanid','tanggal','deskrpsi','status','user' ];
+    protected $fillable = ['penjualanid','tanggal','deskripsi','status','user' ];
 }

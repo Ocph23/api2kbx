@@ -39,8 +39,7 @@
 
 <body ng-app="app">
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="./client/node_modules/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-      width="60">
+    <img class="animation__shake" src="./client/images/Logo-KeybeXpress-Freigth-Forwarding-220x63.png" alt="AdminLTELogo" >
   </div>
 
   <ui-view></ui-view>

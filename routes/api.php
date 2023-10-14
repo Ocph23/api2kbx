@@ -170,8 +170,9 @@ Route::post('tracking', function (Request $request) {
 
 Route::put('tracking/{id}', function (Request $request, $id) {
     $tracking = Tracking::findOrFail($id);
-    $tracking->update($request->all());
-
+    $model = $request->all();
+    $model['tanggal'] = date('Y-m-d H:i:s', strtotime($model['tanggal']));
+    $tracking->update($model);
     return $tracking;
 });
 

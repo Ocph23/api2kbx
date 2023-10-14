@@ -266,7 +266,7 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
   $scope.save = () => {
     $http({
       method: $scope.tracking.id ? "put" : "post",
-      url: helperServices.url + "/api/tracking",
+      url: helperServices.url + "/api/tracking" + ($scope.tracking.id ? "/"+$scope.tracking.id : ""),
       headers: AuthService.getHeader(),
       data: $scope.tracking,
     }).then(
