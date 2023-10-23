@@ -90,7 +90,7 @@ function AdminPenjualanController($scope, $http, $state, helperServices, SweetAl
   $scope.changeDate = (date) => {
     $http({
       method: "get",
-      url: helperServices.url + `/api/penjualan/date/${date.getMonth()+1}/${date.getFullYear()}`,
+      url: helperServices.url + `/api/penjualan/date/${date.getMonth() + 1}/${date.getFullYear()}`,
       headers: AuthService.getHeader(),
       data: date
     }).then(
@@ -117,11 +117,7 @@ function AdminPenjualanController($scope, $http, $state, helperServices, SweetAl
         });
       }
     );
-
-
   }
-
-
 }
 
 function AdminPenjualanBaruController($scope, $state, $stateParams, $http, AuthService, helperServices, SweetAlert) {
@@ -178,7 +174,7 @@ function AdminPenjualanBaruController($scope, $state, $stateParams, $http, AuthS
 
     var req = {
       method: $scope.model.id ? "put" : "post",
-      url: helperServices.url + "/api/penjualan" + ($scope.model.id ? "/"+$scope.model.id : ""),
+      url: helperServices.url + "/api/penjualan" + ($scope.model.id ? "/" + $scope.model.id : ""),
       data: $scope.model,
       headers: AuthService.getHeader()
     };
@@ -238,6 +234,9 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
       }).then(
         function successCallback(response) {
           $scope.model = response.data;
+          $scope.model.trackings.forEach(data => {
+           // data.tanggal = new Date(data.tanggal.toISOString());
+          });
           var result = helperServices.calculateTotal($scope.model);
           $scope.model.isvolume = $scope.model.isvolume ? true : false;
           $scope.biaya = result.biaya;
@@ -262,18 +261,18 @@ function AdminPenjualanRiwayatTracingController($scope, $state, $stateParams, $h
     $scope.tracking.penjualanid = $scope.model.id;
   }
 
-
   $scope.save = () => {
+    $scope.tracking.tanggal = $scope.tracking.tanggal.toLocaleString();
     $http({
       method: $scope.tracking.id ? "put" : "post",
-      url: helperServices.url + "/api/tracking" + ($scope.tracking.id ? "/"+$scope.tracking.id : ""),
+      url: helperServices.url + "/api/tracking" + ($scope.tracking.id ? "/" + $scope.tracking.id : ""),
       headers: AuthService.getHeader(),
       data: $scope.tracking,
     }).then(
       function successCallback(response) {
         if (!$scope.tracking.id) {
           $scope.tracking.id = response.data.id;
-          $scope.model.trackings.push($scope.tracking);  
+          $scope.model.trackings.push($scope.tracking);
         }
 
 

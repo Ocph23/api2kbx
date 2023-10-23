@@ -1,4 +1,8 @@
 
+
+
+
+
 angular.module("app",
     [
         "app.router",
@@ -10,7 +14,9 @@ angular.module("app",
         "auth.controller",
         "admin.controller",
         "main.controller",
-    ]).factory('SweetAlert', ['$window', function SweetAlert($window) {
+    ])
+    
+    .factory('SweetAlert', ['$window', function SweetAlert($window) {
         var $swal = $window.swal;
         return {
             swal: swal

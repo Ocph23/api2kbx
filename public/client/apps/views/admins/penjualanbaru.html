@@ -74,17 +74,18 @@
       </div>
       <hr />
 
+
+
       <div class="row">
         <div class="col-md-12">
-
           <div class="card card-warning">
             <div class="card-header">
               <div style="display: flex ; justify-content: space-between;">
                 <h3 class="card-title">Detail Barang</h3>
                 <div style="display: flex; width: 100px;">
                   <label>Dimensi?</label>
-                  <input ng-change="changeHargaAndBerat()"  ng-model="model.isvolume" type="checkbox" class="form-control"
-                    style="height: 1.5rem !important;">
+                  <input ng-change="changeHargaAndBerat()" ng-model="model.isvolume" type="checkbox"
+                    class="form-control" style="height: 1.5rem !important;">
                 </div>
               </div>
             </div>
@@ -106,18 +107,22 @@
                 <div class="col-md-4" ng-show="!model.isvolume">
                   <div class="form-group">
                     <label>Berat</label>
-                    <input required ng-change="changeHargaAndBerat()" min="{{model.isvolume?0:1}}" ng-model="model.berat" type="number" class="form-control">
+                    <input required ng-change="changeHargaAndBerat()" min="{{model.isvolume?0:1}}"
+                      ng-model="model.berat" type="number" class="form-control">
                   </div>
                 </div>
 
                 <div ng-show="model.isvolume" class="col-md-4">
                   <div class="form-group">
                     <label>Volume (cm)</label>
-                   <div style="display: flex;">
-                    <input required placeholder="P"  min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()" ng-model="model.dimensi_panjang" type="number" class="form-control">
-                    <input required placeholder="L"  min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()" ng-model="model.dimensi_lebar" type="number" class="form-control">
-                    <input required placeholder="T"  min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()" ng-model="model.dimensi_tinggi" type="number" class="form-control">
-                   </div>
+                    <div style="display: flex;">
+                      <input required placeholder="P" min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()"
+                        ng-model="model.dimensi_panjang" type="number" class="form-control">
+                      <input required placeholder="L" min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()"
+                        ng-model="model.dimensi_lebar" type="number" class="form-control">
+                      <input required placeholder="T" min="{{!model.isvolume?0:1}}" ng-change="changeHargaAndBerat()"
+                        ng-model="model.dimensi_tinggi" type="number" class="form-control">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -126,6 +131,40 @@
 
         </div>
       </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title">Pengiriman Via</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <input type="radio" class="formRadio" ng-model="model.via" ng-value="0" name="via"> Darat
+                <input type="radio" class="formRadio" ng-model="model.via" ng-value="1" name="via"> Udara
+                <input type="radio" class="formRadio" ng-model="model.via" ng-value="2" name="via"> Laut
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title">Status Pembayaran</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <input type="radio" class="formRadio" ng-model="model.pembayaran" ng-value="0" name="pembayaran"> Tunai
+                <input type="radio" class="formRadio" ng-model="model.pembayaran" ng-value="1" name="pembayaran"> Kredit
+                <input type="radio" class="formRadio" ng-model="model.pembayaran" ng-value="2" name="pembayaran"> COD
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <hr />
       <div class="row">
         <div class="col-md-6">
@@ -142,7 +181,8 @@
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Tarif</label>
             <div class="col-sm-8">
-              <input required ng-change="changeHargaAndBerat()" min="1" ng-model="model.tarif" type="number" class="form-control">
+              <input required ng-change="changeHargaAndBerat()" min="1" ng-model="model.tarif" type="number"
+                class="form-control">
             </div>
           </div>
           <div class="form-group row">
@@ -154,13 +194,15 @@
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Biaya Packing</label>
             <div class="col-sm-8">
-              <input required ng-change="changeHargaAndBerat()" ng-model="model.biaya_packing" type="number" class="form-control">
+              <input required ng-change="changeHargaAndBerat()" ng-model="model.biaya_packing" type="number"
+                class="form-control">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Biaya Lain-Lain</label>
             <div class="col-sm-8">
-              <input required ng-change="changeHargaAndBerat()" ng-model="model.biaya_lain" type="number" class="form-control">
+              <input required ng-change="changeHargaAndBerat()" ng-model="model.biaya_lain" type="number"
+                class="form-control">
             </div>
           </div>
           <div class="form-group row">

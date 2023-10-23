@@ -12,7 +12,20 @@ class Penjualan extends Model
     use HasFactory;
 
     public $timestamps=false;
-
+    protected $casts = [ 
+        'jumlah' => 'integer', 
+        'via' => 'integer', 
+        'pembayaran' => 'integer', 
+        'tarif' => 'double', 
+        'dimensi_panjang' => 'double', 
+        'dimensi_lebar' => 'double', 
+        'dimensi_tinggi' => 'double', 
+        'biaya_packing' => 'double', 
+        'biaya_lain' => 'double', 
+        'harga' => 'double', 
+        'berat' => 'double', 
+        'isvolume' => 'integer', 
+    ];
 
     protected $fillable = [
         'stt',
@@ -39,6 +52,8 @@ class Penjualan extends Model
         'updated',
         'berat',
         'tanggal',
+        'pembayaran',
+        'via',
         'nama_barang'
     ];
 

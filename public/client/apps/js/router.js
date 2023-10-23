@@ -55,6 +55,21 @@ angular.module("app.router", ["ui.router"])
                 templateUrl: '../client/apps/views/guest/contact.html'
             })
 
+            .state("program-kemitraan", {
+                url: '/program-kemitraan',
+                parent: 'main',
+                controller: "programKemitraanController",
+                templateUrl: '../client/apps/views/guest/programkemitraan.html'
+            })
+            
+            .state("program-agency", {
+                url: '/program-agency',
+                parent: 'main',
+                controller: "programAgencyController",
+                templateUrl: '../client/apps/views/guest/programagency.html'
+            })
+
+
             .state("account", {
                 url: '/account',
                 templateUrl: '../client/apps/views/accounts/account.html'

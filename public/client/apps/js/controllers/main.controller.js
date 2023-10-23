@@ -7,6 +7,8 @@ angular
   .controller("kanwilController", KanwilController)
   .controller("contactController", ContactController)
   .controller("productController", ProductController)
+  .controller("programKemitraanController", ProgramKemitraanController)
+  .controller("programAgencyController", ProgramAgencyController)
 
 
 function HomeController($scope, $state, $http, helperServices, AuthService, SweetAlert) {
@@ -199,6 +201,8 @@ function KanwilController($scope, $http, AuthService, helperServices, SweetAlert
 
 }
 function ContactController($scope) { }
+function ProgramKemitraanController($scope) { }
+function ProgramAgencyController($scope) { }
 function ProductController($scope) {
   $scope.products = [
     {

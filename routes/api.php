@@ -108,7 +108,8 @@ Route::get('penjualan', function () {
 });
 
 Route::get('penjualan/{id}', function ($id) {
-    return Penjualan::find($id);
+    $result = Penjualan::find($id);
+    return $result;
 });
 
 Route::get('penjualan/stt/{id}', function ($id) {
